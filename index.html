@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Emmanuel — Web Developer (Kenya)</title>
-<meta name="description" content="Emmanuel is a Kenya-based web developer building fast, mobile-first websites and Flask back ends. Live work: Ngazi learning platform and the Germaine Training Institute website and API.">
+<meta name="description" content="Emmanuel is a Kenya-based web developer building fast, mobile-first websites and Flask back ends. Work: Ngazi learning platform, the Germaine Training Institute website and API, and the ALU-ELECT student election system.">
 <meta name="theme-color" content="#0B1220">
 <meta property="og:title" content="Emmanuel — Web Developer (Kenya)">
 <meta property="og:description" content="Fast, mobile-first websites and Flask back ends. See live projects.">
@@ -108,16 +108,16 @@ footer{padding:30px 0 40px;color:var(--faint);font-size:13.5px;border-top:1px so
   <div class="wrap hero">
     <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Kenya · open to freelance projects</span>
     <h1>I build fast, <em>mobile-first</em> websites and the back ends behind them.</h1>
-    <p class="lede">I'm Emmanuel, a web developer at Germaine Training Institute in Kenya. I design, build, test and deploy websites that work on low-cost phones and slow connections — from static learning platforms to Flask APIs with a PostgreSQL database.</p>
+    <p class="lede">I'm Emmanuel, a web developer at Germaine Training Institute in Kenya. I design, build, test and deploy websites that work on low-cost phones and slow connections — from learning platforms to Flask APIs, admin dashboards and a secure student election system.</p>
     <div class="cta">
       <a class="btn primary" href="#work">See live work</a>
       <a class="btn" href="mailto:manumanuver2@gmail.com?subject=Website%20project">Email me</a>
     </div>
     <div class="facts" aria-label="At a glance">
       <div class="fact"><b>2</b><span>live production sites</span></div>
-      <div class="fact"><b>1</b><span>live Flask + PostgreSQL API</span></div>
+      <div class="fact"><b>2</b><span>Flask + PostgreSQL back ends</span></div>
+      <div class="fact"><b>103</b><span>passing tests in my election system</span></div>
       <div class="fact"><b>515</b><span>papers in the Ngazi library</span></div>
-      <div class="fact"><b>93</b><span>automated browser checks on Ngazi</span></div>
     </div>
   </div>
 
@@ -157,7 +157,9 @@ footer{padding:30px 0 40px;color:var(--faint);font-size:13.5px;border-top:1px so
             <li><b>Multi-page site</b> with 12 course-category pages, admissions, news, vacancies and an AI bootcamp page.</li>
             <li><b>Flask API, live</b> at <code>api.germaineinstitute.ac.ke</code>: application factory, six blueprints (public, admissions, alumni, enquiries, referral programme, admin) and SQLAlchemy models.</li>
             <li><b>PostgreSQL with migrations</b> managed through Flask-Migrate; JWT-based admin sign-in with password reset.</li>
-            <li><b>Service layer</b> for scholarship documents, content management, and SMS / WhatsApp notifications.</li>
+            <li><b>Admin dashboard</b> (Flask templates) for applications, alumni, enquiries, graduate-hire requests, news, newsletter, media library, site content and the programme catalogue.</li>
+            <li><b>Applicant documents:</b> scholarship letters are generated in the browser, stored on the server with a record of when each was generated, sent and viewed, so staff can open the exact document an applicant received.</li>
+            <li><b>Notifications</b> by email, SMS (Africa's Talking) and WhatsApp (Cloud API), written so a failed message can never undo an application or approval.</li>
             <li><b>Deployed on cPanel</b> (Passenger), with documented API endpoints and a health check.</li>
           </ul>
           <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLAlchemy</span><span class="chip">Flask-Migrate</span><span class="chip">PostgreSQL</span><span class="chip">PyJWT</span><span class="chip">REST API</span><span class="chip">HTML / CSS / JS</span></div>
@@ -165,6 +167,28 @@ footer{padding:30px 0 40px;color:var(--faint);font-size:13.5px;border-top:1px so
         </div>
         <div class="shots single">
           <img src="germaine-home.webp" width="1100" height="463" loading="lazy" alt="Germaine Training Institute home page with navigation, scholarship banner and hero section">
+        </div>
+      </article>
+
+      <article class="case">
+        <div>
+          <span class="tag">Student election system · 2026</span>
+          <h3>ALU-ELECT</h3>
+          <p>A student election platform for Alupe University: secret ballots, one vote per student, verifiable receipts, live results and a role-based admin dashboard.</p>
+          <ul>
+            <li><b>Secret ballot by design:</b> the database is split so it cannot link a student to a choice, and a test reads the live schema to prove it.</li>
+            <li><b>One vote, enforced by the database:</b> a conditional update means two simultaneous submissions can't both count.</li>
+            <li><b>Live results</b> streamed with Server-Sent Events: turnout, current leaders and a race tracker per position.</li>
+            <li><b>Admin dashboard</b> with five roles, an election state machine and re-authentication for sensitive actions.</li>
+            <li><b>Hash-chained audit ledger</b> that detects and locates tampering — described honestly as tamper-evident, not blockchain.</li>
+            <li><b>103 passing tests</b> against PostgreSQL 16, plus CSRF, rate limiting and security headers.</li>
+          </ul>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Flask 3</span><span class="chip">SQLAlchemy 2</span><span class="chip">PostgreSQL</span><span class="chip">Argon2</span><span class="chip">Server-Sent Events</span><span class="chip">pytest</span><span class="chip">Vanilla JavaScript</span></div>
+          <div class="links-row"><a href="https://github.com/Baswet/alu-elect" rel="noopener">Source &amp; docs on GitHub ↗</a></div>
+        </div>
+        <div class="shots single">
+          <img src="election-results.webp" width="1100" height="688" loading="lazy" alt="ALU-ELECT live results page showing 31 votes cast and 77.5% turnout">
+          <img src="election-admin.webp" width="1100" height="688" loading="lazy" alt="ALU-ELECT admin dashboard with totals, turnout and verified records">
         </div>
       </article>
     </div>
@@ -178,6 +202,7 @@ footer{padding:30px 0 40px;color:var(--faint);font-size:13.5px;border-top:1px so
         <div class="card"><h3>Fast business &amp; school websites</h3><p>Mobile-first pages that load quickly on slow connections, with SEO basics, contact forms and hosting set up.</p></div>
         <div class="card"><h3>Flask back ends &amp; APIs</h3><p>REST endpoints, PostgreSQL models and migrations, admin sign-in, and deployment on shared hosting or a server.</p></div>
         <div class="card"><h3>Learning &amp; content platforms</h3><p>Structured notes, quizzes, searchable libraries and printable documents — like Ngazi.</p></div>
+        <div class="card"><h3>Documentation &amp; web content</h3><p>Clear READMEs, API and deployment guides, and plain-language website and learning content.</p></div>
         <div class="card"><h3>Fixes, speed &amp; responsiveness</h3><p>Make an existing site work properly on phones, remove horizontal scrolling, tidy up hosting and caching.</p></div>
       </div>
     </div>
@@ -195,16 +220,18 @@ footer{padding:30px 0 40px;color:var(--faint);font-size:13.5px;border-top:1px so
           <div class="skill"><span>Search &amp; data design (JSON)</span><span>Ngazi</span></div>
         </div>
         <div class="card">
-          <div class="skill"><span>Python &amp; Flask</span><span>Germaine API</span></div>
+          <div class="skill"><span>Python &amp; Flask</span><span>Germaine, ALU-ELECT</span></div>
           <div class="skill"><span>SQLAlchemy, Flask-Migrate</span><span>Germaine API</span></div>
-          <div class="skill"><span>PostgreSQL</span><span>Germaine API</span></div>
-          <div class="skill"><span>JWT authentication</span><span>Germaine API</span></div>
+          <div class="skill"><span>PostgreSQL</span><span>Germaine, ALU-ELECT</span></div>
+          <div class="skill"><span>Auth: JWT, Argon2, CSRF, rate limits</span><span>Germaine, ALU-ELECT</span></div>
+          <div class="skill"><span>pytest on a real database</span><span>ALU-ELECT</span></div>
         </div>
         <div class="card">
           <div class="skill"><span>cPanel, Apache .htaccess</span><span>Both</span></div>
           <div class="skill"><span>Backups &amp; safe deploys</span><span>Ngazi</span></div>
           <div class="skill"><span>Browser testing (Playwright)</span><span>Ngazi</span></div>
           <div class="skill"><span>SEO basics (sitemap, meta, structured data)</span><span>Ngazi</span></div>
+          <div class="skill"><span>Technical documentation</span><span>All projects</span></div>
         </div>
       </div>
     </div>
