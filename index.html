@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emmanuel — Web Developer (Kenya)</title>
+<meta name="description" content="Emmanuel is a Kenya-based web developer building fast, mobile-first websites and Flask back ends. Live work: Ngazi learning platform and the Germaine Training Institute website and API.">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Emmanuel — Web Developer (Kenya)">
+<meta property="og:description" content="Fast, mobile-first websites and Flask back ends. See live projects.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B1220'/><text x='16' y='22' font-family='Arial' font-size='17' font-weight='700' fill='%2334D399' text-anchor='middle'>E</text></svg>">
+<style>
+:root{
+  --bg:#0B1220;--bg2:#101A2E;--card:#131E33;--line:#22304B;--text:#E8EEF8;--muted:#9FB0CB;--faint:#7F90AD;
+  --accent:#34D399;--accent2:#60A5FA;--on-accent:#04140D;--radius:18px;--pad:clamp(16px,4vw,32px);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#F7F9FC;--bg2:#EEF2F8;--card:#FFFFFF;--line:#DCE3EE;--text:#0E1628;--muted:#44526B;--faint:#5B6982;--accent:#047857;--accent2:#1D4ED8;--on-accent:#FFFFFF;color-scheme:light}
+}
+:root[data-theme="light"]{--bg:#F7F9FC;--bg2:#EEF2F8;--card:#FFFFFF;--line:#DCE3EE;--text:#0E1628;--muted:#44526B;--faint:#5B6982;--accent:#047857;--accent2:#1D4ED8;--on-accent:#FFFFFF;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent2)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--accent);color:var(--on-accent);padding:8px 12px;border-radius:8px;z-index:9}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px;border-radius:6px}
+
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;min-height:60px}
+.logo{font-weight:800;letter-spacing:-.02em;text-decoration:none;color:var(--text);margin-right:auto;font-size:18px}
+.logo span{color:var(--accent)}
+nav.links{display:flex;gap:4px}
+nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14.5px;padding:10px 10px;border-radius:10px}
+nav.links a:hover{color:var(--text);background:var(--bg2)}
+@media (max-width:560px){ nav.links a.hide-s{display:none} }
+@media (max-width:360px){ nav.links a{padding:10px 7px} .top .wrap{gap:8px} }
+.theme{flex:0 0 40px}
+.theme{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;font-size:16px}
+
+.hero{padding-top:clamp(40px,9vw,96px);padding-bottom:32px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 25%,transparent)}
+h1{font-size:clamp(34px,7vw,60px);line-height:1.08;letter-spacing:-.035em;margin:14px 0 16px;max-width:17ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(16px,2.4vw,19px);color:var(--muted);max-width:60ch;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid var(--line);color:var(--text);background:var(--card)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:36px}
+.fact{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px 16px}
+.fact b{display:block;font-size:22px;letter-spacing:-.02em}
+.fact span{font-size:13px;color:var(--faint)}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(24px,4vw,32px);letter-spacing:-.025em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 26px;max-width:62ch}
+
+.case{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3vw,28px);margin-bottom:22px}
+@media (min-width:860px){ .case{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)} }
+.case h3{font-size:24px;margin:4px 0 6px;letter-spacing:-.02em}
+.tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.case p{color:var(--muted);margin:8px 0}
+.case ul{margin:10px 0 0;padding-left:20px}
+.case code{overflow-wrap:anywhere}
+.case li{margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg2)}
+.shots{display:grid;gap:10px;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);align-items:start}
+.shots img{border-radius:12px;border:1px solid var(--line);background:var(--bg2)}
+.shots.single{grid-template-columns:minmax(0,1fr)}
+.links-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.links-row a{font-weight:700}
+
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.skill{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.skill:last-child{border-bottom:none}
+.skill span:last-child{color:var(--faint);text-align:right;font-size:13.5px}
+
+.contact{text-align:center}
+.contact .cta{justify-content:center}
+footer{padding:30px 0 40px;color:var(--faint);font-size:13.5px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to projects</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Emmanuel<span>.</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#services" class="hide-s">Services</a>
+      <a href="#skills" class="hide-s">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Kenya · open to freelance projects</span>
+    <h1>I build fast, <em>mobile-first</em> websites and the back ends behind them.</h1>
+    <p class="lede">I'm Emmanuel, a web developer at Germaine Training Institute in Kenya. I design, build, test and deploy websites that work on low-cost phones and slow connections — from static learning platforms to Flask APIs with a PostgreSQL database.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See live work</a>
+      <a class="btn" href="mailto:manumanuver2@gmail.com?subject=Website%20project">Email me</a>
+    </div>
+    <div class="facts" aria-label="At a glance">
+      <div class="fact"><b>2</b><span>live production sites</span></div>
+      <div class="fact"><b>1</b><span>live Flask + PostgreSQL API</span></div>
+      <div class="fact"><b>515</b><span>papers in the Ngazi library</span></div>
+      <div class="fact"><b>93</b><span>automated browser checks on Ngazi</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Live work</h2>
+      <p class="sub">Both projects are online now — open them and try them on your phone.</p>
+
+      <article class="case">
+        <div>
+          <span class="tag">Learning platform · Germaine Training Institute · 2026</span>
+          <h3>Ngazi</h3>
+          <p>A free, step-by-step learning platform for Kenyan learners: notes, practice questions, a question-answering helper and a library of printable practice papers — built to load quickly on a phone.</p>
+          <ul>
+            <li><b>One simple app, four jobs:</b> Learn · Practice · Papers · Ask, with a bottom tab bar on phones.</li>
+            <li><b>24 topics</b> from Grade 5 to Form 4, and <b>515 practice papers</b> with marking schemes, previews and print-to-PDF layout.</li>
+            <li><b>Search that respects the curriculum:</b> “Class 8” (8-4-4) never mixes with “Grade 8” (CBC), and “f4 maths mock” just works.</li>
+            <li><b>Merged two projects into one:</b> an earlier paper-shop prototype was converted into the live platform's data format; the paper index was compressed from 330 KB to 54 KB (about 7 KB over the wire).</li>
+            <li><b>Honest by design:</b> practice papers are labelled as Ngazi originals (never as official KNEC papers), and the payment checkout is a clearly labelled demo until M-Pesa is connected.</li>
+            <li><b>Tested:</b> 93 automated Playwright checks — every page type, search results, checkout flow, and no sideways scrolling from 320 px to 1280 px.</li>
+          </ul>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Vanilla JavaScript</span><span class="chip">JSON data design</span><span class="chip">Print CSS</span><span class="chip">Playwright</span><span class="chip">Apache / cPanel</span></div>
+          <div class="links-row"><a href="https://ngazi.germaineinstitute.ac.ke/" rel="noopener">Open Ngazi ↗</a><a href="https://ngazi.germaineinstitute.ac.ke/#/papers" rel="noopener">Browse the papers ↗</a></div>
+        </div>
+        <div class="shots">
+          <img src="ngazi-home-desktop.webp" width="1100" height="688" loading="lazy" alt="Ngazi home page on a laptop: Learn, Practice, Papers and Ask Ngazi tiles">
+          <img src="ngazi-paper-phone.webp" width="360" height="779" loading="lazy" alt="A Ngazi practice paper page on a phone, showing the paper cover, price and preview button">
+        </div>
+      </article>
+
+      <article class="case">
+        <div>
+          <span class="tag">My role: web developer at the institute · 2026</span>
+          <h3>Germaine Training Institute</h3>
+          <p>The public website of a Kenyan training institute, with course catalogue pages, a scholarship application wizard, alumni and graduate-hire forms, a student referral programme, and a Flask API behind them.</p>
+          <ul>
+            <li><b>Multi-page site</b> with 12 course-category pages, admissions, news, vacancies and an AI bootcamp page.</li>
+            <li><b>Flask API, live</b> at <code>api.germaineinstitute.ac.ke</code>: application factory, six blueprints (public, admissions, alumni, enquiries, referral programme, admin) and SQLAlchemy models.</li>
+            <li><b>PostgreSQL with migrations</b> managed through Flask-Migrate; JWT-based admin sign-in with password reset.</li>
+            <li><b>Service layer</b> for scholarship documents, content management, and SMS / WhatsApp notifications.</li>
+            <li><b>Deployed on cPanel</b> (Passenger), with documented API endpoints and a health check.</li>
+          </ul>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLAlchemy</span><span class="chip">Flask-Migrate</span><span class="chip">PostgreSQL</span><span class="chip">PyJWT</span><span class="chip">REST API</span><span class="chip">HTML / CSS / JS</span></div>
+          <div class="links-row"><a href="https://germaineinstitute.ac.ke/" rel="noopener">Open the website ↗</a><a href="https://api.germaineinstitute.ac.ke/api/health" rel="noopener">API health check ↗</a><a href="https://github.com/Baswet/germaine-training-institute" rel="noopener">Source on GitHub ↗</a></div>
+        </div>
+        <div class="shots single">
+          <img src="germaine-home.webp" width="1100" height="463" loading="lazy" alt="Germaine Training Institute home page with navigation, scholarship banner and hero section">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>What I can build for you</h2>
+      <p class="sub">Fixed scope, clear milestones, and a site you can actually maintain.</p>
+      <div class="grid">
+        <div class="card"><h3>Fast business &amp; school websites</h3><p>Mobile-first pages that load quickly on slow connections, with SEO basics, contact forms and hosting set up.</p></div>
+        <div class="card"><h3>Flask back ends &amp; APIs</h3><p>REST endpoints, PostgreSQL models and migrations, admin sign-in, and deployment on shared hosting or a server.</p></div>
+        <div class="card"><h3>Learning &amp; content platforms</h3><p>Structured notes, quizzes, searchable libraries and printable documents — like Ngazi.</p></div>
+        <div class="card"><h3>Fixes, speed &amp; responsiveness</h3><p>Make an existing site work properly on phones, remove horizontal scrolling, tidy up hosting and caching.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills, with where they're used</h2>
+      <p class="sub">Only what shows up in my live work.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="skill"><span>HTML &amp; CSS (grid, custom properties, print)</span><span>Ngazi, Germaine</span></div>
+          <div class="skill"><span>JavaScript (no framework, hash routing)</span><span>Ngazi</span></div>
+          <div class="skill"><span>Responsive, accessible UI</span><span>Ngazi</span></div>
+          <div class="skill"><span>Search &amp; data design (JSON)</span><span>Ngazi</span></div>
+        </div>
+        <div class="card">
+          <div class="skill"><span>Python &amp; Flask</span><span>Germaine API</span></div>
+          <div class="skill"><span>SQLAlchemy, Flask-Migrate</span><span>Germaine API</span></div>
+          <div class="skill"><span>PostgreSQL</span><span>Germaine API</span></div>
+          <div class="skill"><span>JWT authentication</span><span>Germaine API</span></div>
+        </div>
+        <div class="card">
+          <div class="skill"><span>cPanel, Apache .htaccess</span><span>Both</span></div>
+          <div class="skill"><span>Backups &amp; safe deploys</span><span>Ngazi</span></div>
+          <div class="skill"><span>Browser testing (Playwright)</span><span>Ngazi</span></div>
+          <div class="skill"><span>SEO basics (sitemap, meta, structured data)</span><span>Ngazi</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How I work</h2>
+      <div class="grid">
+        <div class="card"><h3>1 · Inspect first</h3><p>I look at what already exists and keep what works, instead of rebuilding from scratch.</p></div>
+        <div class="card"><h3>2 · Build in small, tested steps</h3><p>Every change is checked on real phone widths, from 320 px up, before it ships.</p></div>
+        <div class="card"><h3>3 · Back up, then ship</h3><p>Every release is backed up and previewed on the real server before it goes live.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Have a project?</h2>
+      <p class="sub" style="margin-left:auto;margin-right:auto">Tell me what you need and your deadline. I'll reply with a clear plan and quote.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:manumanuver2@gmail.com?subject=Website%20project">manumanuver2@gmail.com</a>
+        <a class="btn" id="gh" href="https://github.com/Baswet" rel="me noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Emmanuel · Based in Kenya · Available for remote work</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, key='theme';
+  try{var s=localStorage.getItem(key); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme')==='dark'
+      : !window.matchMedia('(prefers-color-scheme: light)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+}());
+</script>
+</body>
+</html>
